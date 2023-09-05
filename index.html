@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+<meta charset="utf-8">
+<title>我的感言记录</title>
+</head>
+<style type="text/css">
+    img{ border-radius: 50%; width: 150px; height: 150px }
+    h1{ border-radius: 5%; height: 100px; background-color: rgb(180, 222, 100);}
+    html{ background-color: rgb(170, 218, 248); }
+    #container {
+        width:98%;
+        height:auto;
+        background-color: #a8fbf5;
+        border-radius: 15px;
+        box-shadow: 0px 0px 5px #eb8484;
+        padding: 5px;
+        font-family: Arial, sans-serif;
+    }
+
+    #message {
+        margin-bottom: 10px;
+        font-family: cursive;
+        color: rgb(102, 194, 244);
+    }
+
+    #timestamp {
+        font-family: cursive;
+        font: size 20px;
+        color: #e88a75;
+        text-align: right;
+    }
+    #asd{
+        padding-top: 5px;
+
+    }
+
+</style>
+
+<body>
+    
+</body>
+<center>
+    <img src="http://q4.qlogo.cn/headimg_dl?dst_uin=2915513255&spec=100" width="150" height="150" >
+    
+    <p><font size="8" color="#1690FF" style="font-family: cursive;" >孤舟蓑笠翁 独钓寒江雪</font></p>
+</center>
+
+
+<div id="asd"></div>
+
+<script>
+    // 定义数组
+var myArray = [
+"真的喜欢的话 哪会不愿意放弃某些什么 使对方快乐 既然你没有真正喜欢我 那我也便斩断你我的过往",
+    "2023-9-5",
+ "真的喜欢的话 哪会不愿意放弃某些什么 使对方快乐 既然你没有真正喜欢我 那我也便斩断你我的过往",
+    "2023-9-5",
+"真的喜欢的话 哪会不愿意放弃某些什么 使对方快乐 既然你没有真正喜欢我 那我也便斩断你我的过往",
+    "2023-9-5",
+];
+
+// 获取容器元素
+var container = document.getElementById("asd");
+
+
+// 循环生成div元素
+for (var i = 0; i < myArray.length; i+=2) {
+  // 创建div元素
+  var div1 = document.createElement("div");
+  div1.id = "container";
+  // 设置div元素的内容为数组中的元素值
+  var div2 = document.createElement("div");
+  div2.id = "message";
+  div2.innerHTML = myArray[i];
+
+  var div3 = document.createElement("div");
+  div3.id = "timestamp";
+  div3.innerHTML = myArray[i+1];
+
+  div1.appendChild(div2);
+  div1.appendChild(div3);
+  var b1r = document.createElement("br");
+  // 将生成的div元素添加到容器中
+  container.appendChild(div1);
+  container.appendChild(b1r);
+}
+
+</script>
+<script src="snow.js"></script>
+</html>
