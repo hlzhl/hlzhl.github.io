@@ -36,7 +36,7 @@ function snowCanvas() {
 	snowcanvas.width = window.innerWidth;
 	snowcanvas.height = document.body.clientHeight;
 	snowcanvas.setAttribute("style", "position:absolute; top: 0; left: 0; z-index: 1; pointer-events: none;");
-	document.getElementsByTagName("html")[0].appendChild(snowcanvas);
+	document.getElementsByTagName("body")[0].appendChild(snowcanvas);
 	this.canvas = snowcanvas;
 	this.ctx = snowcanvas.getContext("2d");
 	/* 窗口大小改变的处理 */
