@@ -51,42 +51,39 @@
 <div id="asd"></div>
 
 <script>
-    // 定义数组
-var myArray = [
-"真的喜欢的话 哪会不愿意放弃某些什么 使对方快乐 既然你没有真正喜欢我 那我也便斩断你我的过往",
-    "2023-9-5",
- "真的喜欢的话 哪会不愿意放弃某些什么 使对方快乐 既然你没有真正喜欢我 那我也便斩断你我的过往",
-    "2023-9-5",
-"真的喜欢的话 哪会不愿意放弃某些什么 使对方快乐 既然你没有真正喜欢我 那我也便斩断你我的过往",
-    "2023-9-5",
-];
+    var fileName = "list.txt"; // 指定文件名
 
-// 获取容器元素
-var container = document.getElementById("asd");
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', fileName, true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            var a = xhr.responseText;
+            var myArray = a.split("\n");
+            var container = document.getElementById("asd");
+            for (var i = 0; i < myArray.length; i+=2) {
+                  // 创建div元素
+                  var div1 = document.createElement("div");
+                  div1.id = "container";
+                  // 设置div元素的内容为数组中的元素值
+                  var div2 = document.createElement("div");
+                  div2.id = "message";
+                  div2.innerHTML = myArray[i];
 
+                  var div3 = document.createElement("div");
+                  div3.id = "timestamp";
+                  div3.innerHTML = myArray[i+1];
 
-// 循环生成div元素
-for (var i = 0; i < myArray.length; i+=2) {
-  // 创建div元素
-  var div1 = document.createElement("div");
-  div1.id = "container";
-  // 设置div元素的内容为数组中的元素值
-  var div2 = document.createElement("div");
-  div2.id = "message";
-  div2.innerHTML = myArray[i];
-
-  var div3 = document.createElement("div");
-  div3.id = "timestamp";
-  div3.innerHTML = myArray[i+1];
-
-  div1.appendChild(div2);
-  div1.appendChild(div3);
-  var b1r = document.createElement("br");
-  // 将生成的div元素添加到容器中
-  container.appendChild(div1);
-  container.appendChild(b1r);
-}
-
+                  div1.appendChild(div2);
+                  div1.appendChild(div3);
+                  var b1r = document.createElement("br");
+                  // 将生成的div元素添加到容器中
+                  container.appendChild(div1);
+                  container.appendChild(b1r);
+            }
+        }
+    };
+    xhr.send();
 </script>
+
 <script src="snow.js"></script>
 </html>
